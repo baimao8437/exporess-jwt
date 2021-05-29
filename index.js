@@ -17,6 +17,11 @@ app.get('/', (req, res) => {
 
 app.post('/register', async (req, res) => {
   const { email, password, name } = req.body
+
+  if (users.find((user) => user.email === email)) {
+    res.status(400).send('User already exist')
+  }
+
   const encryptedPassword = await encrypt(password)
   const newUser = { email, password: encryptedPassword, name }
   users.push(newUser)
