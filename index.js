@@ -1,5 +1,6 @@
 const express = require('express')
 const bp = require('body-parser')
+const encrypt = require('./encrypt')
 
 const app = express()
 const port = 3000
@@ -14,9 +15,13 @@ app.get('/', (req, res) => {
   res.send('Hello world')
 })
 
-app.post('/register', (req, res) => {
-  console.log(req.body)
-  res.send('success')
+app.post('/register', async (req, res) => {
+  const { email, password, name } = req.body
+  const encryptedPassword = await encrypt(password)
+  const newUser = { email, password: encryptedPassword, name }
+  users.push(newUser)
+
+  res.json(newUser)
 })
 
 app.listen(port, () => {
