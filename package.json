@@ -4,5 +4,11 @@
   "main": "index.js",
   "repository": "git@github.com:baimao8437/exporess-jwt.git",
   "author": "baimao shih <baimao@xfers.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
