@@ -1,0 +1,8 @@
+{
+  "name": "exporess-jwt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:baimao8437/exporess-jwt.git",
+  "author": "baimao shih <baimao@xfers.com>",
+  "license": "MIT"
+}
