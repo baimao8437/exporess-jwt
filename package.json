@@ -5,6 +5,9 @@
   "repository": "git@github.com:baimao8437/exporess-jwt.git",
   "author": "baimao shih <baimao@xfers.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
