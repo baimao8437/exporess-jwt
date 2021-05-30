@@ -66,6 +66,18 @@ app.post(
     res.json({ accessToken })
   })
 
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization']
+  const token = authHeader && authHeader.split(' ')[1]
+  if (!token) return res.status(401)
+
+  jwt.verify(token, ACCESS_TOKEN, (err, user) => {
+    if (err) return res.status(403)
+    req.user = user
+    next()
+  })
+}
+
 app.listen(port, () => {
   console.log(`Express server listening at http://localhost:${port}`)
 })
