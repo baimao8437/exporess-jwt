@@ -20,3 +20,10 @@ Content-Type: application/json
   "email": "abc@gmail.com",
   "password": "abcdef"
 }
+
+### Get user info
+Get http://localhost:3000/user_info
+Content-Type: application/json
+// get the access token from login request and put after 'Bearer'
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvaG4iLCJpYXQiOjE2MjIzNjE5NjR9.HpyVDKDC_OhcnP6Q3JIcXTQ3i4UkxA216yb3fp0phas
+
