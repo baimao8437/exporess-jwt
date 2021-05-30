@@ -2,7 +2,10 @@ const express = require('express')
 const bp = require('body-parser')
 const bcrypt = require('bcrypt')
 const { body, validationResult } = require('express-validator')
+const jwt = require('jsonwebtoken')
+
 const encrypt = require('./encrypt')
+const ACCESS_TOKEN = require('./secret')
 
 const app = express()
 const port = 3000
@@ -58,7 +61,9 @@ app.post(
     const passwordMatch = await bcrypt.compare(password, user.password)
     if (!passwordMatch) return res.status(400).send("Incorrect password")
 
-    res.send("succeed")
+    const accessToken = jwt.sign({ username: user.name }, ACCESS_TOKEN)
+
+    res.json({ accessToken })
   })
 
 app.listen(port, () => {
