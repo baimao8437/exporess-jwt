@@ -72,7 +72,7 @@ use `nodemon` to run index.js
 
 and test the api:
 
-![Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled.png](Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled.png)
+![image](https://user-images.githubusercontent.com/11513917/120097992-1d758c80-c166-11eb-9855-cf1680a59e66.png)
 
 This extension **[Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), can use along with a [`requests.rest`](http://requests.rest) file
 will be clearer to show how to use the app**
@@ -101,7 +101,7 @@ if invalid → return error messages
 
 if valid → Encrypt password → create a new user
 
-![Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled%201.png](Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled%201.png)
+![image](https://user-images.githubusercontent.com/11513917/120098009-2d8d6c00-c166-11eb-9921-e7b380acf95a.png)
 
 ### Login API
 
@@ -113,7 +113,7 @@ return JWT token when user login successfully
 
   when we encrypt the identical string with this `encrypt` function, it return different hash
 
-  ![Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled%202.png](Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled%202.png)
+  ![image](https://user-images.githubusercontent.com/11513917/120098023-39792e00-c166-11eb-9849-dc346c41833d.png)
 
   Solution:
 
@@ -121,7 +121,7 @@ return JWT token when user login successfully
 
   there is a [bcrypt.compare](http://bcrypt.compare) to check user password according to official website
 
-  ![Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled%203.png](Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled%203.png)
+  ![image](https://user-images.githubusercontent.com/11513917/120098030-3e3de200-c166-11eb-9b12-786aa9705594.png)
 
 once we create an access token for the user, he can pass the token through the header inside each API request: `Authorization: Bearer <accessToken>`
 
@@ -141,7 +141,7 @@ if it's authorized, we can attach the `payload` into our request and go to next 
 
 here the payload will be `{ username: <user.name> }`
 
-![Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled%204.png](Express%20JWT%20Auth%20207f408cfbd6498bb7989c6823b97405/Untitled%204.png)
+![image](https://user-images.githubusercontent.com/11513917/120098043-45fd8680-c166-11eb-8801-03e9e71c074b.png)
 
 # Reference
 
