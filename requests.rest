@@ -7,7 +7,7 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-  "email": "abc@com",
-  "password": "abcd",
-  "name": "aaa"
+  "email": "abc@gmail.com",
+  "password": "abcdef",
+  "name": "John"
 }
