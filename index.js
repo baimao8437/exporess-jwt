@@ -1,5 +1,6 @@
 const express = require('express')
 const bp = require('body-parser')
+const bcrypt = require('bcrypt')
 const { body, validationResult } = require('express-validator')
 const encrypt = require('./encrypt')
 
@@ -38,6 +39,26 @@ app.post(
     users.push(newUser)
 
     res.json(newUser)
+  })
+
+app.post(
+  '/login',
+  body('email').isEmail(),
+  body('password').exists(),
+  async (req, res) => {
+    const { email, password } = req.body
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() })
+    }
+
+    const user = users.find(user => user.email === email)
+    if (!user) return res.status(400).send("Account not registered")
+
+    const passwordMatch = await bcrypt.compare(password, user.password)
+    if (!passwordMatch) return res.status(400).send("Incorrect password")
+
+    res.send("succeed")
   })
 
 app.listen(port, () => {

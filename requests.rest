@@ -11,3 +11,12 @@ Content-Type: application/json
   "password": "abcdef",
   "name": "John"
 }
+
+### Login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "abc@gmail.com",
+  "password": "abcdef"
+}
